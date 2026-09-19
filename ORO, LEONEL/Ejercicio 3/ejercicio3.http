@@ -1,0 +1,41 @@
+### 1. Obtener todas las tareas
+GET http://localhost:3000/api/tareas
+
+### 2. Obtener solo las tareas completadas
+GET http://localhost:3000/api/tareas?completada=true
+
+### 3. Obtener solo las tareas pendientes
+GET http://localhost:3000/api/tareas?completada=false
+
+### 4. Obtener una tarea por ID
+GET http://localhost:3000/api/tareas/1
+
+### 5. Crear una nueva tarea
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+  "nombre": "Preparar parcial de base de datos",
+  "completada": false
+}
+
+### 6. Intentar crear tarea con nombre duplicado (Error 400)
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+  "nombre": "Estudiar para Programacion IV",
+  "completada": false
+}
+
+### 7. Modificar una tarea existente (PUT)
+PUT http://localhost:3000/api/tareas/1
+Content-Type: application/json
+
+{
+  "nombre": "Estudiar para Programacion IV",
+  "completada": true
+}
+
+### 8. Eliminar una tarea (DELETE)
+DELETE http://localhost:3000/api/tareas/2

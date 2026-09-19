@@ -1,0 +1,35 @@
+### 1. Obtener todos los alumnos
+GET http://localhost:3000/api/alumnos
+
+### 2. Obtener un alumno por ID
+GET http://localhost:3000/api/alumnos/1
+
+### 3. Crear un nuevo alumno (Promocionado)
+POST http://localhost:3000/api/alumnos
+Content-Type: application/json
+
+{
+  "nombre": "Carlos Tevez",
+  "notas": [8, 9, 10]
+}
+
+### 4. Intentar crear un alumno con nombre duplicado (Error 400)
+POST http://localhost:3000/api/alumnos
+Content-Type: application/json
+
+{
+  "nombre": "Carlos Ortiz",
+  "notas": [6, 6, 6]
+}
+
+### 5. Actualizar un alumno existente (PUT)
+PUT http://localhost:3000/api/alumnos/2
+Content-Type: application/json
+
+{
+  "nombre": "John Smith",
+  "notas": [7, 7, 8]
+}
+
+### 6. Eliminar un alumno (DELETE)
+DELETE http://localhost:3000/api/alumnos/1
